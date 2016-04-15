@@ -42,7 +42,7 @@
   },
   "scripts": {
     "bundle": "NODE_ENV=production browserify -e index.js -o bundle.js",
-    "build": "NODE_ENV=development watchify -e index.js -p browserify-hmr -o bundle.js -dv",
+    "build": "watchify -e index.js -p browserify-hmr -o bundle.js -dv",
     "serve": "http-server . -p 3000",
     "start": "npm run serve & npm run build"
   }
