@@ -1,49 +1,34 @@
 {
   "name": "boilerplate",
   "version": "0.0.1",
-  "description": "Some React app",
+  "description": "React app",
   "main": "index.js",
   "dependencies": {
-    "react": "^15.0.1",
-    "react-dom": "^15.0.1"
+    "react": "~15.3.2",
+    "react-dom": "~15.3.2"
   },
   "devDependencies": {
-    "babel-core": "~6.7.6",
-    "babel-plugin-transform-es2015-modules-commonjs": "~6.7.4",
-    "babel-preset-react": "~6.5.0",
-    "babel-preset-react-hmre": "~1.1.1",
-    "babelify": "~7.2.0",
-    "browserify": "^13.0.0",
-    "browserify-hmr": "~0.3.1",
-    "envify": "~3.4.0",
+    "babel-core": "~6.17.0",
+    "babel-loader": "~6.2.5",
+    "babel-plugin-transform-es2015-modules-commonjs": "~6.16.0",
+    "babel-preset-es2017": "~6.16.0",
+    "babel-preset-react": "~6.16.0",
     "http-server": "~0.9.0",
-    "watchify": "^3.7.0"
-  },
-  "browserify": {
-    "transform": [
-      "babelify",
-      "envify"
-    ]
+    "webpack": "~1.13.2",
+    "webpack-dev-server": "~1.16.1"
   },
   "babel": {
     "presets": [
-      "react"
+      "react",
+      "es2017"
     ],
     "plugins": [
       "transform-es2015-modules-commonjs"
-    ],
-    "env": {
-      "development": {
-        "presets": [
-          "react-hmre"
-        ]
-      }
-    }
+    ]
   },
   "scripts": {
-    "bundle": "NODE_ENV=production browserify -e index.js -o bundle.js",
-    "build": "watchify -e index.js -p browserify-hmr -o bundle.js -dv",
-    "serve": "http-server . -p 3000",
-    "start": "npm run serve & npm run build"
+    "build": "NODE_ENV=production webpack index.js bundle.js -p",
+    "serve": "http-server . -p 8080",
+    "start": "webpack-dev-server ."
   }
 }

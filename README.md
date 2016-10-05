@@ -1,6 +1,6 @@
 # boilerplate
 
-Smallest boilerplate for the React
+Smallest boilerplate for React.
 
 ## How to start
 
@@ -11,4 +11,4 @@ Smallest boilerplate for the React
 ## Dockerize
 
 	docker build -t my-react-prototype .
-	docker run -d -p 3000:3000 my-react-prototype
+	docker run -d -p 8080:8080 my-react-prototype
