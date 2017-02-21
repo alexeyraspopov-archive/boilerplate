@@ -4,31 +4,27 @@
   "description": "React app",
   "main": "index.js",
   "dependencies": {
-    "react": "~15.3.2",
-    "react-dom": "~15.3.2"
+    "react": "~15.4.2",
+    "react-dom": "~15.4.2"
   },
   "devDependencies": {
-    "babel-core": "~6.17.0",
-    "babel-loader": "~6.2.5",
-    "babel-plugin-transform-es2015-modules-commonjs": "~6.16.0",
-    "babel-preset-es2017": "~6.16.0",
-    "babel-preset-react": "~6.16.0",
+    "babel-core": "~6.23.1",
+    "babel-loader": "~6.3.2",
+    "babel-preset-es2017": "~6.22.0",
+    "babel-preset-react": "~6.23.0",
     "http-server": "~0.9.0",
-    "webpack": "~1.13.2",
-    "webpack-dev-server": "~1.16.1"
+    "webpack": "~2.2.1",
+    "webpack-dev-server": "~2.4.1"
   },
   "babel": {
     "presets": [
       "react",
       "es2017"
-    ],
-    "plugins": [
-      "transform-es2015-modules-commonjs"
     ]
   },
   "scripts": {
     "build": "NODE_ENV=production webpack index.js bundle.js -p",
     "serve": "http-server . -p 8080",
-    "start": "webpack-dev-server ."
+    "start": "NODE_ENV=development webpack-dev-server ."
   }
 }
